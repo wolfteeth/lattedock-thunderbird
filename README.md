@@ -1,6 +1,7 @@
 # Latte Dock Thunderbird Extension
 
-Adds unread count badge to Thunderbird running in [Latte Dock](https://github.com/psifidotos/Latte-Dock).
+Adds unread count badge to Thunderbird running in [Latte
+Dock](https://github.com/psifidotos/Latte-Dock) on KDE Plasma.
 
 ## Usage
 
