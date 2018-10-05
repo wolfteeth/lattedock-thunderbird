@@ -26,9 +26,6 @@
 			<fileset dir="${src}">
 				<exclude name="**/${lattedock-icon}" />
       </fileset>
-			<filterset>
-				<filtersfile file="build.properties" />
-			</filterset>
 		</copy>
 		<copy file="${src}/${lattedock-icon}" toFile="${build}/${lattedock-icon}" />
     <zip destfile="${dist}/lattedock-thunderbird-${version}.xpi">

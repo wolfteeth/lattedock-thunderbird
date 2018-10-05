@@ -44,7 +44,7 @@ var lattedockunread = {
 		
 		dump("Found path: " + path + "\n");
 
-		var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);		
+		var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsIFile);		
 		file.initWithPath("/usr/bin/env");
 		
 		var args = ["python", path, x];
