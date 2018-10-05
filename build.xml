@@ -3,12 +3,18 @@
 		builds lattedock thunderbird extension
 	</description>
 
+  <exec executable="/usr/bin/git" outputproperty="git.tag">
+    <arg value="describe"/>
+    <arg value="--abbrev=0"/>
+    <arg value="--tags"/>
+  </exec>
+
 	<property name="src" location="src" />
 	<property name="build" location="build" />
 	<property name="dist" location="dist" />
 	<property name="update-script" value="update-badge.py" />
-	<property name="lattedock-icon" value="icon.png" />
-  <property file="build.properties" />
+  <property name="lattedock-icon" value="icon.png" />
+  <property name="version" value="${git.tag}"/>
 
 	<target name="init">
 		<mkdir dir="${dist}" />
@@ -25,7 +31,7 @@
 			</filterset>
 		</copy>
 		<copy file="${src}/${lattedock-icon}" toFile="${build}/${lattedock-icon}" />
-    <zip destfile="${dist}/lattedock-thunderbird-${VERSION}.xpi">
+    <zip destfile="${dist}/lattedock-thunderbird-${version}.xpi">
 			<zipfileset dir="${build}">
 				<exclude name="**/${update-script}" />
 			</zipfileset>
