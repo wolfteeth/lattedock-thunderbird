@@ -1,14 +1,18 @@
-XPI := lattedock-thunderbird.xpi
-
-SOURCE_FILES := $(shell find ./src/ -type f)
+PACKAGE          ?= lattedock-thunderbird
+VERSION          ?= $(shell git describe --abbrev=0 --tags 2>/dev/null)
+XPI              ?= $(PACKAGE)-$(VERSION).xpi
 
 all: $(XPI)
 
-%.xpi: $(SOURCE_FILES)
-	@cd "src"; \
+%.xpi:
+	@cp -R ./src/ ./build/; \
+	cd "build"; \
+	sed -i 's/\@VERSION\@/$(VERSION)/g' install.rdf; \
+	sed -i 's/\@VERSION\@/$(VERSION)/g' chrome/content/about.xul; \
 	zip -FS -r "../$@" *; \
 	cd ..; \
 	mv $(XPI) dist/
 
 clean:
-	rm -f $(XPI)
+	rm -fr build/
+	rm -f	$(XPI)
