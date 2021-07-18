@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "applications": {
+        "gecko": {
+            "id": "03ae01b6-6d68-11e7-842c-4af176302efd",
+            "strict_min_version": "68.0"
+        }
+    },
+    "name": "Latte Unread Count",
+    "description": "Displays numbers of unread messages in all inboxes",
+    "version": "@VERSION@",
+    "icons": {
+        "32": "icon.png"
+    }
+}

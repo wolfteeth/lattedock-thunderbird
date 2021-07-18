@@ -7,7 +7,7 @@ all: $(XPI)
 %.xpi:
 	@cp -R ./src/ ./build/; \
 	cd "build"; \
-	sed -i 's/\@VERSION\@/$(VERSION)/g' install.rdf; \
+	sed -i 's/\@VERSION\@/$(VERSION)/g' manifest.json; \
 	sed -i 's/\@VERSION\@/$(VERSION)/g' chrome/content/about.xul; \
 	zip -FS -r "../$@" *; \
 	cd ..; \
