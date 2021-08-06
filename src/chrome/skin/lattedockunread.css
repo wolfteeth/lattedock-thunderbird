@@ -5,7 +5,7 @@
 }
 #lattedockunread-toolbar-button
 {
-  list-style-image: url("chrome://lattedockunread/skin/toolbar-button.png");
+  list-style-image: url("resource://lattedockunread/toolbar-button.png");
   -moz-image-region: rect(0px 24px 24px 0px);
 }
 #lattedockunread-toolbar-button:hover

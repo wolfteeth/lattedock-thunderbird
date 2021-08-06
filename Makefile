@@ -8,7 +8,7 @@ all: $(XPI)
 	@cp -R ./src/ ./build/; \
 	cd "build"; \
 	sed -i 's/\@VERSION\@/$(VERSION)/g' manifest.json; \
-	sed -i 's/\@VERSION\@/$(VERSION)/g' chrome/content/about.xul; \
+	sed -i 's/\@VERSION\@/$(VERSION)/g' chrome/content/about.xhtml; \
 	zip -FS -r "../$@" *; \
 	cd ..; \
 	mv $(XPI) dist/
